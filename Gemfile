@@ -1,6 +1,5 @@
 source "http://rubygems.org"
 gem "faraday", ">= 0.8.1"
-gem "celluloid", ">= 0.11.1"
 gem "hashie", ">= 1.2.0"
 gem "activesupport"
 
