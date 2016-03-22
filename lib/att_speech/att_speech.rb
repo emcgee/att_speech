@@ -1,7 +1,4 @@
 class ATTSpeech
-  include Celluloid
-  Celluloid.logger = nil
-
   attr_reader :api_key, :secret_key, :access_token, :refresh_token, :base_url, :ssl_verify, :scope
 
   ##
@@ -54,8 +51,6 @@ class ATTSpeech
     end
 
     get_tokens
-
-    Actor.current
   end
 
   ##
