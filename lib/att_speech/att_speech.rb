@@ -3,10 +3,7 @@
 require 'core_ext/att_multipart'
 
 class ATTSpeech
-  include Celluloid
-  Celluloid.logger = nil
-
-  attr_reader :api_key, :secret_key, :access_token, :refresh_token, :base_url, :ssl_verify
+  attr_reader :api_key, :secret_key, :access_token, :refresh_token, :base_url, :ssl_verify, :scope
 
   ##
   # Creates an ATTSpeech object
@@ -49,8 +46,6 @@ class ATTSpeech
     create_connection 'application/json'
 
     get_tokens
-
-    Actor.current
   end
 
   ##

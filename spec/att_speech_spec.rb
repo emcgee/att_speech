@@ -90,26 +90,6 @@ describe "AttSpeech" do
     end
   end
 
-  describe 'non-blocking call' do
-    it "should return a Celluloid::Future object when processing an audio file" do
-      future = att_speech.future(:speech_to_text, 'spec/spec_helper.rb')
-      future.instance_of?(Celluloid::Future).should eql true
-
-      future = att_speech_hash.future(:speech_to_text, 'spec/spec_helper.rb')
-      future.instance_of?(Celluloid::Future).should eql true
-    end
-
-    it "should allow us to use a future to process an audio file" do
-      future = att_speech.future(:speech_to_text, 'spec/spec_helper.rb')
-      future.value[:recognition][:response_id].should eql '2b0bdcf4301f5c4aba57e2765b59bcbe'
-      future.value[:recognition][:n_best][:confidence].should eql 1
-
-      future = att_speech_hash.future(:speech_to_text, 'spec/spec_helper.rb')
-      future.value[:recognition][:response_id].should eql '2b0bdcf4301f5c4aba57e2765b59bcbe'
-      future.value[:recognition][:n_best][:confidence].should eql 1
-    end
-  end
-
   context 'text to speech' do
     it 'should request a TTS transaction' do
       text = 'Hello brown cow'

@@ -23,11 +23,10 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 1.9.3'
   s.summary = "A Ruby library for consuming the AT&T Speech API https://developer.att.com/developer/forward.jsp?passedItemId=12500023 for speech->text, and text->speech."
 
-  s.add_runtime_dependency(%q<faraday>, ["~> 0.8.1"])
-  s.add_runtime_dependency(%q<celluloid>, [">= 0.11.1"])
+  s.add_runtime_dependency(%q<faraday>, [">= 0.8.1"])
   s.add_runtime_dependency(%q<hashie>, [">= 1.2.0"])
   s.add_runtime_dependency(%q<activesupport>, [">= 0"])
-
+  
   s.add_development_dependency(%q<rspec>, [">= 2.8.0"])
   s.add_development_dependency(%q<yard>, [">= 0.7"])
   s.add_development_dependency(%q<rdoc>, [">= 3.12"])
