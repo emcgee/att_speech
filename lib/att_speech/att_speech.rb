@@ -65,8 +65,9 @@ class ATTSpeech
 
     headers = {
       :Authorization             => "Bearer #{@access_token}",
-      :Content_Transfer_Encoding => 'chunked',
-      :Accept                    => 'application/json'
+      :Transfer_Encoding         => 'chunked',
+      :Accept                    => 'application/json',
+      :Content_Type              => type
     }
 
     if options.has_key?(:grammar)
